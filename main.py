@@ -24,7 +24,8 @@ def print_received_message(msg):
     print("收到一条消息：")
     print("发送者昵称：", msg['User']['NickName'])
     print("消息内容：", msg['Text'])
-    if msg['User']['NickName'] == 'Quirina.':
+    # 关注某好友的信息，当该好友发信息时，直接在当前页面弹出消息窗口
+    if msg['User']['NickName'] == 'xxxxx':
         # 初始化Tkinter
         root = tk.Tk()
         root.withdraw()  # 隐藏主窗口
@@ -63,14 +64,8 @@ except ProtocolError as e:
 else:
     # 如果连接成功，使用 itchat 发送消息
     itchat.auto_login(hotReload=True)
-    itchat.send('Hello, friend!', toUserName='lsj1170414294')
+    itchat.send('Hello, friend!', toUserName='xxxxxxx')
     itchat.run()
 
-# itchat.auto_login(hotReload=True)
-# # itchat.send('快来田老师朋友圈吃瓜', toUserName=itchat.search_friends(name='鱼鱼')[0]['UserName'])
-# # print(itchat.search_friends())
-# # itchat.get_msg()
-# # itchat.start_receiving()
-# itchat.run()
 
 # 访问 https://www.jetbrains.com/help/pycharm/ 获取 PyCharm 帮助
